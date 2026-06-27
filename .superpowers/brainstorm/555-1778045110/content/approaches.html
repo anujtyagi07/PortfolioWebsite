@@ -1,0 +1,44 @@
+<h2>3 approaches for the navbar transformation</h2>
+<p class="subtitle">Same end result — different implementation strategies. My recommendation is highlighted.</p>
+
+<div class="options">
+
+  <div class="option selected" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A ★</div>
+    <div class="content">
+      <h3>Two separate components + scroll state (Recommended)</h3>
+      <p>Keep the top navbar and the left pill as two separate JSX elements. A <code>useScrolled</code> hook flips a boolean at ~80px. Top navbar gets <code>AnimatePresence</code> exit animation (fade + slide up-left). Left pill has entrance animation (slide in from x:-60, y:-40 → 0,0) — giving the diagonal arrival feel. Both use <code>motion.div</code>.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Cleanest code — each state is its own component</li><li>Framer Motion handles all interpolation</li><li>Easy to tweak each state independently</li><li>Consistent with your existing codebase</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Two components instead of one</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Single component with Framer Motion layout animation</h3>
+      <p>One <code>&lt;nav&gt;</code> component that uses Framer Motion's <code>layout</code> prop. On scroll, change its CSS from <code>top-0 horizontal flex</code> to <code>left-0 vertical flex</code> and let Framer Motion's FLIP algorithm animate the position morph automatically.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Elegant — one element, one truth</li><li>FLIP animation is buttery smooth</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Layout animations on <code>position:fixed</code> elements are finicky</li><li>Hard to independently control each nav item's morph</li><li>Risk of jank at the transform boundary</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Pure CSS transitions (no Framer Motion for the swap)</h3>
+      <p>Toggle a CSS class on scroll. Two absolutely-positioned navs, each with <code>transition: all 0.4s</code>. No JS animation library for the swap — just <code>opacity</code>, <code>transform</code>, and <code>pointer-events</code>.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Lightest — no animation library overhead for this part</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Less expressive — no spring physics, no staggered entry</li><li>Inconsistent with existing Framer Motion usage</li><li>Diagonal morph is harder to orchestrate in CSS</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:20px;">Option A is recommended — fits your stack, gives the most control over the diagonal animation. Confirm in terminal to see the full design.</p>

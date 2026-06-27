@@ -1,0 +1,123 @@
+<h2>What happens to the logo + Hire Me button on scroll?</h2>
+<p class="subtitle">The nav links collapse into the left icon pill. Pick what the logo and CTA do.</p>
+
+<div class="cards">
+
+  <!-- Option A: Logo at top of pill, no CTA -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;min-height:200px;position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;inset:0;opacity:0.12;padding:16px 16px 16px 70px;">
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:55%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:38%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;width:65%"></div>
+      </div>
+      <!-- Pill with logo on top -->
+      <div style="position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;background:#111118;border:1px solid #1e1e2e;border-radius:18px;padding:10px 8px;box-shadow:0 0 28px rgba(139,92,246,0.22);min-width:42px;">
+        <!-- Logo -->
+        <div style="width:28px;height:28px;border-radius:8px;background:#8B5CF620;border:1px solid #8B5CF640;display:flex;align-items:center;justify-content:center;margin-bottom:4px;">
+          <span style="font-size:9px;font-weight:800;color:#8B5CF6;">AT</span>
+        </div>
+        <!-- Divider -->
+        <div style="width:20px;height:1px;background:#1e1e2e;"></div>
+        <!-- Nav icons -->
+        <div style="width:26px;height:26px;border-radius:7px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;">
+          <div style="width:12px;height:2px;background:#8B5CF6;border-radius:2px;box-shadow:0 3.5px 0 #8B5CF6,0 7px 0 #8B5CF6;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:9px;height:9px;border:1.5px solid #64748b;border-radius:2px;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:9px;height:9px;border-radius:50%;border:1.5px solid #64748b;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:1.5px;background:#64748b;border-radius:2px;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:8px;height:8px;background:#64748b;border-radius:1px;transform:rotate(45deg);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Logo stays at top of pill, Hire Me hidden</h3>
+      <p>AT logo pins to the top of the sidebar pill. Hire Me button disappears on scroll — user scrolls back up to access it. Clean, pure nav.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Logo hidden, CTA hidden — pure icons only -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;min-height:200px;position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;inset:0;opacity:0.12;padding:16px 16px 16px 60px;">
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:60%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:40%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;width:68%"></div>
+      </div>
+      <!-- Pure icon pill -->
+      <div style="position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;background:#111118;border:1px solid #1e1e2e;border-radius:18px;padding:12px 8px;box-shadow:0 0 28px rgba(139,92,246,0.22);min-width:42px;">
+        <div style="width:26px;height:26px;border-radius:7px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;">
+          <div style="width:12px;height:2px;background:#8B5CF6;border-radius:2px;box-shadow:0 3.5px 0 #8B5CF6,0 7px 0 #8B5CF6;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:9px;height:9px;border:1.5px solid #64748b;border-radius:2px;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:9px;height:9px;border-radius:50%;border:1.5px solid #64748b;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:1.5px;background:#64748b;border-radius:2px;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:8px;height:8px;background:#64748b;border-radius:1px;transform:rotate(45deg);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Pure icons only, nothing else</h3>
+      <p>Logo and Hire Me both disappear. The pill is just nav icons. Absolute minimum. Both reappear instantly when scrolled back to top.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Logo + CTA both in pill (logo top, CTA bottom) -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;min-height:200px;position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;inset:0;opacity:0.12;padding:16px 16px 16px 72px;">
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:55%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:38%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;width:65%"></div>
+      </div>
+      <!-- Pill with logo + CTA -->
+      <div style="position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;background:#111118;border:1px solid #1e1e2e;border-radius:18px;padding:10px 8px;box-shadow:0 0 28px rgba(139,92,246,0.22);min-width:42px;">
+        <div style="width:28px;height:28px;border-radius:8px;background:#8B5CF620;border:1px solid #8B5CF640;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:9px;font-weight:800;color:#8B5CF6;">AT</span>
+        </div>
+        <div style="width:20px;height:1px;background:#1e1e2e;margin:2px 0;"></div>
+        <div style="width:26px;height:26px;border-radius:7px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;">
+          <div style="width:12px;height:2px;background:#8B5CF6;border-radius:2px;box-shadow:0 3.5px 0 #8B5CF6,0 7px 0 #8B5CF6;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:9px;height:9px;border:1.5px solid #64748b;border-radius:2px;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:9px;height:9px;border-radius:50%;border:1.5px solid #64748b;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:1.5px;background:#64748b;border-radius:2px;"></div>
+        </div>
+        <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:8px;height:8px;background:#64748b;border-radius:1px;transform:rotate(45deg);"></div>
+        </div>
+        <div style="width:20px;height:1px;background:#1e1e2e;margin:2px 0;"></div>
+        <!-- CTA icon -->
+        <div style="width:26px;height:26px;border-radius:7px;background:#8B5CF6;display:flex;align-items:center;justify-content:center;">
+          <div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:7px solid white;margin-left:1px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Logo + nav icons + Hire Me icon in pill</h3>
+      <p>Logo at top, nav icons in middle, Hire Me arrow icon at bottom. All-in-one sidebar. CTA is always reachable. Tallest pill but fully self-contained.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:20px;">Click your preference and respond in the terminal.</p>

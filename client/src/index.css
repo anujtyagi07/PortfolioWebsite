@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-page: #ffffff;
+    --color-card: #f8fafc;
+    --color-line: #e2e8f0;
+    --color-copy: #0f172a;
+    --color-muted: #64748b;
+  }
+
+  .dark {
+    --color-page: #0a0a0f;
+    --color-card: #111118;
+    --color-line: #1e1e2e;
+    --color-copy: #f8fafc;
+    --color-muted: #94a3b8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-page text-copy font-sans antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  .container-max {
+    @apply max-w-6xl mx-auto w-full;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand to-brand-soft bg-clip-text text-transparent;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  }
+
+  .card {
+    @apply bg-card border border-line rounded-2xl;
+  }
+
+  .gradient-shimmer {
+    background: linear-gradient(90deg, #8B5CF6, #A78BFA, #C084FC, #8B5CF6);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-slide 4s linear infinite;
+  }
+
+  @keyframes shimmer-slide {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: blink 1.1s step-end infinite;
+  }
+
+  @keyframes service-ring-spin {
+    to { transform: rotate(1turn); }
+  }
+
+  .service-ring {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .group:hover > .service-ring,
+  .group:hover .service-ring {
+    opacity: 0.55;
+  }
+
+  .service-ring::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg, transparent 0deg, var(--ring-color) 90deg, transparent 180deg, var(--ring-color) 270deg, transparent 360deg);
+    animation: service-ring-spin 4s linear infinite;
+  }
+}

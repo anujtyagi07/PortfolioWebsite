@@ -1,0 +1,95 @@
+<h2>How should the navbar transition to the left pill?</h2>
+<p class="subtitle">Pick the animation style for the top → left transformation on scroll.</p>
+
+<div class="cards">
+
+  <!-- Option A: Slide + morph -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;min-height:190px;position:relative;overflow:hidden;">
+      <!-- Top nav (fading out) -->
+      <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:#111118;border:1px solid #1e1e2e;border-radius:12px;padding:6px 10px;opacity:0.3;white-space:nowrap;">
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Home</span>
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Projects</span>
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Skills</span>
+      </div>
+      <!-- Arrow showing motion -->
+      <div style="position:absolute;top:50px;left:50%;transform:translateX(-50%);font-size:18px;color:#8B5CF6;opacity:0.7;">↙</div>
+      <!-- Left pill (arrived) -->
+      <div style="position:absolute;left:14px;top:50%;transform:translateY(-40%);display:flex;flex-direction:column;align-items:center;gap:7px;background:#111118;border:1px solid #8B5CF640;border-radius:16px;padding:9px 7px;box-shadow:0 0 28px rgba(139,92,246,0.3);min-width:38px;">
+        <div style="width:24px;height:24px;border-radius:7px;background:#8B5CF620;border:1px solid #8B5CF640;display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;font-weight:800;color:#8B5CF6;">AT</span></div>
+        <div style="width:18px;height:1px;background:#1e1e2e;"></div>
+        <div style="width:24px;height:24px;border-radius:6px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:1.5px;background:#8B5CF6;border-radius:2px;box-shadow:0 3px 0 #8B5CF6,0 6px 0 #8B5CF6;"></div></div>
+        <div style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border:1.5px solid #64748b;border-radius:2px;"></div></div>
+        <div style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #64748b;"></div></div>
+        <div style="width:18px;height:1px;background:#1e1e2e;"></div>
+        <div style="width:24px;height:24px;border-radius:6px;background:#8B5CF6;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid white;margin-left:1px;"></div></div>
+      </div>
+      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:9px;color:#64748b;white-space:nowrap;">Slides diagonally from center-top → left edge</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Slide + morph</h3>
+      <p>The pill slides from the top center diagonally to the left edge while shrinking and rotating to vertical. Fluid, continuous motion. Most dramatic.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Fade out top, fade in left -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;min-height:190px;position:relative;overflow:hidden;">
+      <!-- Two states side by side with opacity -->
+      <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:#111118;border:1px solid #1e1e2e;border-radius:12px;padding:6px 10px;opacity:0.15;white-space:nowrap;">
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Home</span>
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Projects</span>
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Skills</span>
+      </div>
+      <div style="position:absolute;top:42px;left:50%;transform:translateX(-50%);font-size:22px;color:#8B5CF6;opacity:0.5;">⟳</div>
+      <div style="position:absolute;top:58px;left:50%;transform:translateX(-50%);font-size:9px;color:#64748b;white-space:nowrap;">fades out</div>
+      <!-- Left pill (fading in) -->
+      <div style="position:absolute;left:14px;top:50%;transform:translateY(-30%);display:flex;flex-direction:column;align-items:center;gap:7px;background:#111118;border:1px solid #8B5CF640;border-radius:16px;padding:9px 7px;box-shadow:0 0 28px rgba(139,92,246,0.3);min-width:38px;">
+        <div style="width:24px;height:24px;border-radius:7px;background:#8B5CF620;border:1px solid #8B5CF640;display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;font-weight:800;color:#8B5CF6;">AT</span></div>
+        <div style="width:18px;height:1px;background:#1e1e2e;"></div>
+        <div style="width:24px;height:24px;border-radius:6px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:1.5px;background:#8B5CF6;border-radius:2px;box-shadow:0 3px 0 #8B5CF6,0 6px 0 #8B5CF6;"></div></div>
+        <div style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border:1.5px solid #64748b;border-radius:2px;"></div></div>
+        <div style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #64748b;"></div></div>
+        <div style="width:18px;height:1px;background:#1e1e2e;"></div>
+        <div style="width:24px;height:24px;border-radius:6px;background:#8B5CF6;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid white;margin-left:1px;"></div></div>
+      </div>
+      <div style="position:absolute;bottom:10px;left:14px;font-size:9px;color:#8B5CF6;">fades in</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Crossfade</h3>
+      <p>Top navbar fades out, left pill fades in simultaneously. Clean and subtle — no movement, just a dissolve. Least distracting while reading.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Slide in from left -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;min-height:190px;position:relative;overflow:hidden;">
+      <!-- Top nav still visible but shrinking -->
+      <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:#111118;border:1px solid #1e1e2e;border-radius:12px;padding:6px 10px;opacity:0.2;white-space:nowrap;">
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Home</span>
+        <span style="font-size:9px;color:#94a3b8;padding:3px 7px;">Projects</span>
+      </div>
+      <!-- Arrows showing slide in from left -->
+      <div style="position:absolute;left:0;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:4px;">
+        <div style="font-size:14px;color:#8B5CF6;opacity:0.5;margin-left:4px;">→</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:7px;background:#111118;border:1px solid #8B5CF640;border-radius:16px;padding:9px 7px;box-shadow:0 0 28px rgba(139,92,246,0.3);min-width:38px;">
+          <div style="width:24px;height:24px;border-radius:7px;background:#8B5CF620;border:1px solid #8B5CF640;display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;font-weight:800;color:#8B5CF6;">AT</span></div>
+          <div style="width:18px;height:1px;background:#1e1e2e;"></div>
+          <div style="width:24px;height:24px;border-radius:6px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;"><div style="width:10px;height:1.5px;background:#8B5CF6;border-radius:2px;box-shadow:0 3px 0 #8B5CF6,0 6px 0 #8B5CF6;"></div></div>
+          <div style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border:1.5px solid #64748b;border-radius:2px;"></div></div>
+          <div style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #64748b;"></div></div>
+          <div style="width:18px;height:1px;background:#1e1e2e;"></div>
+          <div style="width:24px;height:24px;border-radius:6px;background:#8B5CF6;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid white;margin-left:1px;"></div></div>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:9px;color:#64748b;white-space:nowrap;">Top nav fades, pill slides in from left edge</div>
+    </div>
+    <div class="card-body">
+      <h3>C — Slide in from left edge</h3>
+      <p>Top navbar fades out while the left pill slides in from off-screen left. Feels purposeful and directional — the sidebar "arrives" into position.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:20px;">Pick your preferred transition and respond in terminal.</p>

@@ -1,0 +1,103 @@
+<h2>On-scroll sidebar — which style fits your portfolio?</h2>
+<p class="subtitle">When the user scrolls down, the top navbar transitions to a vertical element on the left. Pick the sidebar form that feels right.</p>
+
+<div class="cards">
+
+  <!-- Option A: Icon-only floating pill -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;display:flex;align-items:center;justify-content:center;min-height:180px;position:relative;">
+      <!-- Simulated page content behind -->
+      <div style="position:absolute;inset:0;opacity:0.15;padding:16px;">
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:60%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:40%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;width:70%"></div>
+      </div>
+      <!-- Sidebar pill -->
+      <div style="position:absolute;left:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;background:#111118;border:1px solid #1e1e2e;border-radius:16px;padding:10px 8px;box-shadow:0 0 24px rgba(139,92,246,0.2);">
+        <div style="width:28px;height:28px;border-radius:8px;background:#8B5CF620;display:flex;align-items:center;justify-content:center;">
+          <div style="width:14px;height:2px;background:#8B5CF6;border-radius:2px;box-shadow:0 3px 0 0 #8B5CF6,0 6px 0 0 #8B5CF6;"></div>
+        </div>
+        <div style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:10px;border:2px solid #94a3b8;border-radius:3px;"></div>
+        </div>
+        <div style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:12px;height:12px;border-radius:50%;border:2px solid #94a3b8;"></div>
+        </div>
+        <div style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:12px;height:2px;background:#94a3b8;border-radius:2px;"></div>
+        </div>
+        <div style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:8px;height:8px;background:#94a3b8;border-radius:2px;transform:rotate(45deg);"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Icon-only floating pill</h3>
+      <p>Compact pill on the left edge. Icons only, no labels. Minimal footprint — content stays wide. Tooltip shows label on hover.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Icon + label sidebar -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;display:flex;align-items:center;justify-content:center;min-height:180px;position:relative;">
+      <div style="position:absolute;inset:0;opacity:0.15;padding:16px 16px 16px 90px;">
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:60%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:40%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;width:70%"></div>
+      </div>
+      <!-- Sidebar with labels -->
+      <div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:4px;background:#111118;border:1px solid #1e1e2e;border-radius:14px;padding:10px 8px;box-shadow:0 0 24px rgba(139,92,246,0.2);min-width:76px;">
+        <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px;background:#8B5CF620;">
+          <div style="width:10px;height:10px;background:#8B5CF6;border-radius:2px;flex-shrink:0;"></div>
+          <span style="font-size:9px;color:#8B5CF6;font-weight:600;">Home</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px;">
+          <div style="width:10px;height:10px;border:1.5px solid #94a3b8;border-radius:2px;flex-shrink:0;"></div>
+          <span style="font-size:9px;color:#94a3b8;">Projects</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px;">
+          <div style="width:10px;height:10px;border-radius:50%;border:1.5px solid #94a3b8;flex-shrink:0;"></div>
+          <span style="font-size:9px;color:#94a3b8;">Skills</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px;">
+          <div style="width:10px;height:2px;background:#94a3b8;border-radius:2px;flex-shrink:0;"></div>
+          <span style="font-size:9px;color:#94a3b8;">Blog</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px;">
+          <div style="width:8px;height:8px;background:#94a3b8;border-radius:1px;transform:rotate(45deg);flex-shrink:0;"></div>
+          <span style="font-size:9px;color:#94a3b8;">Contact</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Icon + label sidebar panel</h3>
+      <p>Slightly wider — shows icon and text label. Active item highlighted in purple. Content area shifts slightly right. Clearest navigation.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Limelight dots-only strip -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0f;display:flex;align-items:center;justify-content:center;min-height:180px;position:relative;">
+      <div style="position:absolute;inset:0;opacity:0.15;padding:16px;">
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:60%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;margin-bottom:8px;width:40%"></div>
+        <div style="height:8px;background:#f8fafc;border-radius:4px;width:70%"></div>
+      </div>
+      <!-- Dot nav strip -->
+      <div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px;background:#111118;border:1px solid #1e1e2e;border-radius:20px;padding:14px 8px;box-shadow:0 0 30px rgba(139,92,246,0.25);">
+        <div style="width:8px;height:8px;border-radius:50%;background:#8B5CF6;box-shadow:0 0 8px #8B5CF6;margin:0 auto;"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:#1e1e2e;border:1.5px solid #94a3b8;margin:0 auto;"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:#1e1e2e;border:1.5px solid #94a3b8;margin:0 auto;"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:#1e1e2e;border:1.5px solid #94a3b8;margin:0 auto;"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:#1e1e2e;border:1.5px solid #94a3b8;margin:0 auto;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Progress dots strip</h3>
+      <p>Ultra-minimal. Just glowing dots indicating section. Hovering a dot reveals the label. Takes zero space — content stays completely full-width.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:24px;">All three animate smoothly from the top navbar on first scroll. Which sidebar form matches the feel you're going for?</p>
